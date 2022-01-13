@@ -1,3 +1,4 @@
+const generateUniqueId= require('../utils/generateUniqueId')
 const crypto = require('crypto');/**crypto utilizado para criptografia porém utilizamos um de seus métodos para gerar uma string aleatória */
 const connection = require('../database/connection');
 
@@ -28,3 +29,4 @@ module.exports = {
         return response.json({id});
     }
 };
+

@@ -48,7 +48,7 @@ import heroesImg from'../../assets/heroes.png';
 
                         <button className="button" type="submit">Entrar</button>      
 
-                            <Link to className="Back-Link" to= "/register">
+                            <Link className="Back-Link" to= "/register">
                             <FiLogIn size={16} color="#E02041"/>
                             
                             Não tenho cadastro

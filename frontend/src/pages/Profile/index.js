@@ -17,6 +17,12 @@ import './styles.css';
         const history = useHistory();
 
 
+        if(ongName === null){
+            alert("Realize o Login!");
+            history.push('/')
+        }
+
+
         useEffect(() => {
             api.get('profile', {
              headers:{
@@ -71,6 +77,19 @@ import './styles.css';
                   
                         <strong>DESCRIÇÃO:</strong>
                         <p>{incident.description}</p>
+
+                        <strong>DOAR COM PAYPAL:</strong>
+                        
+                        <form 
+                        action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick" />
+                        <input type="hidden" name="hosted_button_id" value="N435SNY8VXDP8" />
+                        <input type="image" src={logoImg} border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Faça doações com o botão do PayPal" />
+                        <img src={logoImg} width="1" height="1" />
+                        </form>
+                       
+                        
+                       
 
                         <strong>VALOR:</strong>
                         <p>{Intl.NumberFormat('pt-BR',{style: 'currency', currency: 'BRL'}).format(incident.value)}</p>
